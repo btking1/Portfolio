@@ -1,0 +1,16 @@
+---
+// Data Fetching: List all Markdown posts in the repo.
+const projects = await Astro.glob("../pages/project/**/*.md");
+const featuredProject = projects[0];
+import PortfolioPreview from "../components/PortfolioPreview.astro";
+---
+
+<div class="grid">
+  <div class="section">
+    <h3 class="sectionTitle">Selected Work</h3>
+    <PortfolioPreview project={featuredProject} />
+    <div class="buttonContainer">
+      <a href="/projects/" class="button">View All</a>
+    </div>
+  </div>
+</div>

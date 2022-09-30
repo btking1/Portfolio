@@ -6,27 +6,22 @@ import ThemeToggle from "./themeToggleButton.jsx";
 
 <header class="fixed w-full p-2 z-20 backdrop-blur-md">
   <div class="mx-auto max-w-3xl">
-    <nav class="flex items-center gap-3 text-base ">
+    <nav id="nav" class="flex items-center gap-3 text-base">
       <a class="link" href="/">
-        <h2 class=" flex font-bold -tracking-tighter p-2 font-jetbrains text-lg items-center content-center gap-1">
-			<MemoryChip />
+        <h2
+          class="flex font-bold -tracking-tighter p-2 font-jetbrains text-lg items-center content-center gap-1"
+        >
+          <MemoryChip />
           BK:DEV
         </h2>
       </a>
-      <div class="items-center gap-6 hidden md:flex">
+      <div id="links" class="items-center gap-6  hidden md:flex">
         <a class="link" href="/projects/"> Portfolio</a>
         <a class="link" href="/about/"> About</a>
         <a class="link" href="/contact/"> Contact</a>
-        <div class="flex gap-3 items-center h-full text-xl">
-          <a href="https://github.com/btking1">
-            <IoLogoGithub />
-          </a>
-          <a href="https://www.linkedin.com/in/booker-king-42493a247/">
-            <IoLogoLinkedin />
-          </a>
-        </div>
-		<div class="flex-1"></div>
-		<ThemeToggle client:load />
+       
+        <div class="flex-1"></div>
+        <ThemeToggle client:load />
       </div>
     </nav>
   </div>
@@ -39,7 +34,17 @@ import ThemeToggle from "./themeToggleButton.jsx";
     font-family: "M PLUS Rounded 1c", sans-serif;
     letter-spacing: 0.05em;
     font-weight: 400;
-	text-decoration: none;
-	gap: 4px;
+    text-decoration: none;
+    gap: 4px;
   }
+
+  /* @media (max-width: 640px) {
+    nav{
+      flex-direction: column;
+    }
+    #links {
+      font-size: smaller;
+      display: none;
+    }
+  } */
 </style>

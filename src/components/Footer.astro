@@ -2,24 +2,19 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-	&copy; {currentYear} Jeanine White
-	<small class="byline">🚀 Built by Astro</small>
+<footer
+  class=" p-4 text-center "
+>
+  
+    <button type="submit" class="send-email text-zinc-500 hover:text-orange-300 cursor-pointer"> Get in touch</button>
+  
 </footer>
-<style>
-	footer {
-		text-align: center;
-		padding-top: 8rem;
-		padding-right: 2rem;
-		padding-bottom: 4rem;
-		padding-left: 2rem;
-	}
+<script client:visible>
+  const sendEmail = document.querySelector(".send-email");
 
-	.byline {
-		display: block;
-		margin-top: 1rem;
-		color: var(--t-subdue);
-		font-size: var(--f-d2);
-		text-transform: uppercase;
-	}
-</style>
+  sendEmail.addEventListener("click", (event) => {
+    event.preventDefault();
+    const email = "mailto:	btking1@my.waketech.edu";
+    window.location.href = email;
+  });
+</script>

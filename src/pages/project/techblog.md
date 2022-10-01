@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Tech Blog
 client: Self
 publishDate: 2020-03-04 00:00:00
-img: ../../../public/assets/techblog.svg
+img: ../../../assets/techblog.svg
 description: |
   Blog based app that allows for creation of users and posts through RESTful API.
 appLink: https://tech-talk-mvc.herokuapp.com/login

@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Team Dashboard
 client: Self
 publishDate: 2020-03-04 00:00:00
-img: ../../../public/assets/teamdash.svg
+img: ../../../assets/teamdash.svg
 description: |
   Command line team management tool.
 github: https://github.com/btking1/Eng-Team-Profile-Generator

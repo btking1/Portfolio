@@ -3,7 +3,7 @@ layout: ../../../layouts/project.astro
 title: Note Taker
 client: Self
 publishDate: 2020-03-04 00:00:00
-img: ../../../public/assets/notesonline.svg
+img: ../../../assets/notesonline.svg
 description: |
   A web application that allows users to create, edit, and delete notes.
 appLink: https://notesmonline.herokuapp.com/

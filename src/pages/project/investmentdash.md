@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Investment Dashboard
 client: Self
 publishDate: 2020-03-02 00:00:00
-img:  ../../../public/assets/ipd.svg
+img:  ../../../assets/ipd.svg
 description: |
   Online investment dashboard that allows users to manage their stock portfolios.
 appLink: https://cpm-128.github.io/investment-portfolio-dashboard/

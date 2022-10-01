@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Image AI
 client: Self
 publishDate: 2022-09-22 00:00:00
-img: ../../../public/assets/imagineai.svg
+img: ../../../assets/imagineai.svg
 description: |
   Image AI is a web application that uses machine learning to classify images of animals and objects.
 appLink: https://project2-app-btking.herokuapp.com/

@@ -3,7 +3,7 @@ layout: ../../layouts/project.astro
 title: Resume Builder
 client: Self
 publishDate: 2022-09-22 00:00:00
-img: ../../../public/assets/resumeBuilder.jpg
+img: ../../../assets/resumeBuilder.jpg
 description: |
   We built a web application that uses machine learning to generate images based on a prompt you provide.
 github: https://github.com/chrisdhodges12/resume-builder

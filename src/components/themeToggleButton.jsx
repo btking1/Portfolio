@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { IoSunny, IoMoon } from 'react-icons/io5/index.js'
+import SunIcon from './icons/sun.jsx'
+import MoonIcon from './icons/moon.jsx'
+// import { IoSunny, IoMoon } from 'react-icons/io5/index.js'
 
 const themes = ['light', 'dark']
 
@@ -49,7 +51,7 @@ export default function ThemeToggle() {
             onClick={toggleTheme}
             aria-label="Toggle theme"
           >
-            {t === 'light' ? <IoSunny /> : <IoMoon />}
+            {t === 'light' ? <SunIcon  /> : <MoonIcon />}
           </button>
         )
       })}

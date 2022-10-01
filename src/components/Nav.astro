@@ -1,12 +1,30 @@
 ---
-
 import MemoryChip from "./icons/memoryChip.jsx";
 import ThemeToggle from "./themeToggleButton.jsx";
+// create pages as props
+const pages = [
+  {
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Projects",
+    path: "/projects",
+  },
+  {
+    title: "Contact",
+    path: "/contact",
+  },
+  {
+    title: "Resume",
+    path: "/resume",
+  },
+];
 ---
 
 <header class="fixed w-full p-2 z-20 backdrop-blur-md">
   <div class="mx-auto max-w-3xl">
-    <nav id="nav" class="flex items-center gap-3 text-base">
+    <nav class="flex items-center gap-3 text-base">
       <a class="link" href="/">
         <h2
           class="flex font-bold -tracking-tighter p-2 font-jetbrains text-lg items-center content-center gap-1"
@@ -16,17 +34,18 @@ import ThemeToggle from "./themeToggleButton.jsx";
         </h2>
       </a>
       <div id="links" class="items-center gap-6 hidden md:flex">
-        <a class="link" href="/projects/">Portfolio</a>
-        <a class="link" href="/about/">About</a>
-        <a class="link" href="/contact/">Contact</a>
-        <a class="link" href="/resume/">Resume</a>
-
-        <div class="flex-1"></div>
-        <ThemeToggle client:load />
+        {
+          pages.map((page) => (
+            <a class="link" href={page.path}>
+              {page.title}
+            </a>
+          ))
+        }
       </div>
+      <div class="flex-1"></div>
+      <ThemeToggle client:visible />
     </nav>
   </div>
-  <div class="flex-1"></div>
 </header>
 
 <style>
@@ -36,6 +55,7 @@ import ThemeToggle from "./themeToggleButton.jsx";
     letter-spacing: 0.05em;
     font-weight: 400;
     text-decoration: none;
+    align-items: center;
     gap: 4px;
   }
 

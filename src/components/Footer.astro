@@ -2,14 +2,16 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class=" p-4 text-center "
->
-  
-    <button type="submit" class="send-email text-zinc-500 hover:text-orange-300 cursor-pointer"> Get in touch</button>
-  
+<footer class="p-4 text-center">
+  <button
+    type="submit"
+    class="send-email text-zinc-500 hover:text-blue-400 cursor-pointer"
+  >
+    send me a
+    <span class="font-mplus text-lg">📧</span>
+  </button>
 </footer>
-<script>
+<script client:visible>
   const sendEmail = document.querySelector(".send-email");
 
   sendEmail.addEventListener("click", (event) => {

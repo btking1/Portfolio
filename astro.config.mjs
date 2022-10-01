@@ -9,4 +9,9 @@ export default defineConfig({
   integrations: [react(), tailwind(), sitemap()],
   output: "static",
   adapter: vercel(),
+  // vite: {
+  //   ssr: {
+  //     external: ["svgo"],
+  //   },
+  // },
 });

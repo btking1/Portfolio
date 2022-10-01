@@ -5,6 +5,7 @@ import Nav from "../components/Nav.astro";
 import Footer from "../components/Footer.astro";
 import Hero from "../components/Hero.astro";
 import Featured from "../components/Featured.astro";
+import Aboutme from "../components/Aboutme.astro";
 // import PortfolioPreview from "../components/PortfolioPreview.astro";
 import Body from "../components/Body.astro";
 ---
@@ -18,31 +19,12 @@ import Body from "../components/Body.astro";
   </head>
   <Body>
     <Nav />
-
-    <main class="wrapper">
+    <main class="mx-auto">
       <Hero />
       <Featured />
-      <div class="section">
-        <h3 class="sectionTitle">About me</h3>
-        <p class="font-mplus">
-          <span>Hello!</span> I’m Jeanine, and this is my website. It was made using{
-            " "
-          }
-          <a
-            href="https://github.com/withastro/astro"
-            target="_blank"
-            rel="nofollow"
-          >
-            Astro</a
-          >, a new way to build static sites. This is just an example template
-          for you to modify.
-        </p>
-        <p>
-          <a href="/about">Read more</a>
-        </p>
-      </div>
+	  <!-- <Aboutme /> -->
     </main>
     <Footer />
   </Body>
-
 </html>
+

@@ -17,28 +17,33 @@ const projects = (await Astro.glob("./project/**/*.md"))
 <html lang="en">
   <head>
     <MainHead
-      title="All Projects | Jeanine White"
-      description="Learn about Jeanine White's most recent projects"
+      title="All Projects | Booker"
+      description="Learn about Booker King most recent projects"
     />
-    <style>
-      .grid {
-        display: grid;
-        grid-gap: 3rem;
-      }
-      .title {
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-      }
-    </style>
   </head>
   <Body>
     <Nav />
-    <div class="wrapper">
-      <h1 class="title">All Projects</h1>
-      <div class="grid">
-        {projects.map((project) => <PortfolioPreview project={project} />)}
-      </div>
+    <!-- <div class="m-4"> -->
+    <div class="flex 1"></div>
+    <h1
+      class="mt-20 mb-5 text-center font-mplus text-xl md:text-xl lg:text-2xl p-2 font-semibold"
+    >
+      All Projects
+    </h1>
+    <div class="grid mb-5">
+      {projects.map((project) => <PortfolioPreview project={project} />)}
     </div>
+    <!-- </div> -->
     <Footer />
   </Body>
+  <style>
+    .grid {
+      display: grid;
+      grid-gap: 3rem;
+    }
+    /* .title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  } */
+  </style>
 </html>

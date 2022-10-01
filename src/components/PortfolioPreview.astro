@@ -39,9 +39,10 @@ const { frontmatter, url } = Astro.props.project;
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		color: white;
+		color: (black, 0.8);
 		flex-direction: column;
 		font-size: var(--f-u4);
+		font-family: 'Architects Daughter', cursive;
 		font-weight: 900;
 		text-transform: uppercase;
 		letter-spacing: 0.0625em;
@@ -63,6 +64,8 @@ const { frontmatter, url } = Astro.props.project;
 		line-height: 1.4;
 		margin-top: 0em;
 		margin-bottom: 1em;
+		font-family: 'M PLUS Rounded 1c', sans-serif;
+		font-weight: 300;
 	}
 
 	.link {
@@ -101,6 +104,7 @@ const { frontmatter, url } = Astro.props.project;
 		border: 2px solid rgba(255, 255, 255, 0);
 		transition: transform 300ms cubic-bezier(0, 0.4, 0.6, 1), border-color 1s linear;
 		transform: translateY(25%);
+		font-family: 'M PLUS Rounded 1c', sans-serif;
 	}
 
 	.nav {
@@ -111,6 +115,7 @@ const { frontmatter, url } = Astro.props.project;
 	.tags {
 		font-size: var(--f-d2);
 		text-transform: uppercase;
+		font-family: 'kosugi maru', sans-serif;
 	}
 
 	.tag {

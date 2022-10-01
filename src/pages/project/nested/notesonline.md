@@ -1,15 +1,19 @@
 ---
 layout: ../../../layouts/project.astro
-title: Lunar Eclipse
+title: Note Taker
 client: Self
 publishDate: 2020-03-04 00:00:00
-img: https://images.unsplash.com/photo-1548391350-1a529f6ea42d?fit=crop&w=1400&h=700&q=75
+img: ../../../public/assets/notesonline.svg
 description: |
-  We took some cool pictures of the moon and made a website about it.
+  A web application that allows users to create, edit, and delete notes.
+appLink: https://notesmonline.herokuapp.com/
+github: https://github.com/btking1/notesOnline
 tags:
-  - design
-  - dev
-  - branding
+  - HTML
+  - CSS
+  - JS
+  - Node
+  - Express
 ---
 
 Rubber cheese mascarpone cut the cheese. Jarlsberg parmesan cheesy grin cream cheese port-salut stinking bishop ricotta brie. Roquefort when the cheese comes out everybody's happy goat cheese triangles stilton cheese and biscuits goat babybel. Bocconcini roquefort queso danish fontina pecorino.

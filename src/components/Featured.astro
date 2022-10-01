@@ -5,12 +5,13 @@ const featuredProject = projects[0];
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 ---
 
-<div class="grid">
+
+<div class="py-10">
   <div class="section">
-    <h3 class="sectionTitle">Selected Work</h3>
+    <h3 class="text-center font-mplus text-xl md:text-xl lg:text-2xl p-4 font-semibold">Featured Project</h3>
     <PortfolioPreview project={featuredProject} />
-    <div class="buttonContainer">
-      <a href="/projects/" class="button">View All</a>
+    <div class="flex justify-end p-4">
+      <a href="/projects/" class="font-kosugi">View All</a>
     </div>
   </div>
 </div>

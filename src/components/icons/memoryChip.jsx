@@ -3,15 +3,15 @@ import react from "react";
 export default function MemoryChip() {
   return (
     <svg
-      class="transisition-transform duration-300 ease-in-out"
+      className="transisition-transform duration-300 ease-in-out"
       viewBox="0 0 24 24"
       fill="none"
       height={28}
       width={28}
       stroke="currentColor"
-      stroke-width=".85"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth=".85"
+      strokeLinecap="round"
+      strokeLinejoin="round"
 
     >
       <path d="M18.5,16V8c0-1.378-1.122-2.5-2.5-2.5H8C6.622,5.5,5.5,6.622,5.5,8v8c0,1.379,1.122,2.5,2.5,2.5h8  C17.378,18.5,18.5,17.379,18.5,16z M6.5,16V8c0-0.827,0.673-1.5,1.5-1.5h8c0.827,0,1.5,0.673,1.5,1.5v8c0,0.827-0.673,1.5-1.5,1.5H8  C7.173,17.5,6.5,16.827,6.5,16z"></path>

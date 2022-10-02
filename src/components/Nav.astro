@@ -1,24 +1,24 @@
 ---
 import MemoryChip from "./icons/memoryChip.jsx";
 import ThemeToggle from "./themeToggleButton.jsx";
-// create pages as props
-const pages = [
-  {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Projects",
-    path: "/projects",
-  },
-  {
-    title: "Contact",
-    path: "/contact",
-  },
-  {
-    title: "Resume",
-    path: "/resume",
-  },
+import DropdownMenu from "./DropdownMenu.tsx";
+
+const homeUrl: URL = new URL("/", Astro.url);
+const aboutUrl: URL = new URL("/about", Astro.url);
+const contactUrl: URL = new URL("/contact", Astro.url);
+const projectUrl: URL = new URL("/projects", Astro.url);
+const resume: URL = new URL("/resume", Astro.url);
+
+type Page = {
+  name: string;
+  href: string;
+}[];
+const pages: Page = [
+  { name: "Home", href: homeUrl.href },
+  { name: "About", href: aboutUrl.href },
+  { name: "Projects", href: projectUrl.href },
+  { name: "Resume", href: resume.href },
+  { name: "Contact", href: contactUrl.href },
 ];
 ---
 
@@ -36,14 +36,16 @@ const pages = [
       <div id="links" class="items-center gap-6 hidden md:flex">
         {
           pages.map((page) => (
-            <a class="link" href={page.path}>
-              {page.title}
+            <a class="link" href={page.href}>
+              {page.name}
             </a>
           ))
         }
       </div>
       <div class="flex-1"></div>
       <ThemeToggle client:visible />
+
+      <DropdownMenu pages={pages} client:visible />
     </nav>
   </div>
 </header>

@@ -10,6 +10,8 @@
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"]
-    }
+    },
+    "noEmitOnError": false,
+
   }
 }

@@ -1,0 +1,50 @@
+---
+import { marked } from "marked";
+
+const response = await fetch(
+  "https://github.com/btking1/Tech-Talk-blog/blob/main/README.md"
+);
+const markdown = await response.blob();
+// const content = marked.parse(markdown);
+import { Code } from "astro/components";
+import MainHead from "../components/MainHead.astro";
+import Main from "../layouts/projectx.astro";
+
+---
+
+<html lang="en">
+  <head>
+    <MainHead
+      title="Booker King | example"
+      description="Booker King: Developer, Creative-Thinker, and Problem-Solver"
+    />
+    <script>
+      // import { marked } from "marked";
+     
+
+      const response = await fetch(
+        "https://github.com/btking1/Tech-Talk-blog/blob/main/README.md",
+        {
+          mode: "no-cors",
+        }
+      ).then((res) => {
+        if (!res.ok) {
+          throw new Error(`HTTP error! status: ${res.status}`);
+        }
+        console.log(res);
+        return res.blob();
+
+      });
+      // const markdown = await response
+      // console.log(response);
+      // const markdown = await response.blob();
+      // const content = marked.parse(markdown);
+    </script>
+  </head>
+
+  <Main>
+    <main class="m-5 pt-[64px] h-screen w-full">
+      <Code lang="markdown" wrap theme="nord" code={`${markdown}`} />
+    </main>
+  </Main>
+</html>

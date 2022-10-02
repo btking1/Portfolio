@@ -9,7 +9,7 @@ const { frontmatter, url } = Astro.props.project;
 	<div class="descCard">
 		<p class="desc">{frontmatter.description}</p>
 		<div class="tags">
-			Tagged:
+			Technologies:
 			{frontmatter.tags.map((t) => (
 				<div class="tag" data-tag={t}>
 					{t}

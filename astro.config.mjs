@@ -8,6 +8,23 @@ export default defineConfig({
   integrations: [react(), tailwind()],
   output: "server",
   adapter: vercel(),
+  markdown: {
+    shikiConfig: {
+      theme: "rose-pine",
+      langs: [
+        "javascript",
+        "typescript",
+        "jsx",
+        "tsx",
+        "css",
+        "html",
+        "json",
+        "markdown",
+        "mdx",
+      ],
+      wrap: true,
+    },
+  },
   vite: {
     ssr: {
       external: ["svgo"],

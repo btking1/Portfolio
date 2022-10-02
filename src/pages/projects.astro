@@ -1,5 +1,6 @@
 ---
 import PortfolioPreview from "../components/PortfolioPreview.astro";
+import MainHead from "@components/MainHead.astro";
 import Main from "../layouts/main.astro";
 const projects = (await Astro.glob("./project/**/*.md"))
   .filter(({ frontmatter }) => !!frontmatter.publishDate)
@@ -11,16 +12,24 @@ const projects = (await Astro.glob("./project/**/*.md"))
 ---
 
 <html lang="en">
+  <head>
+    <MainHead
+      title="Booker King | Projects"
+      description="Booker King: portfolio of projects"
+    />
+  </head>
   <Main>
-    <div class="flex 1"></div>
-    <h1
-      class="mt-20 pt-[56px] mb-5 text-center font-mplus text-xl md:text-xl lg:text-2xl p-2 font-semibold sm:mt-10 sm:pt-[64px]"
-    >
-      All Projects
-    </h1>
-    <div class="grid mb-5">
-      {projects.map((project) => <PortfolioPreview project={project} />)}
-    </div>
+    <section class="pt-[56px] flex flex-col mx-auto max-w-4xl sm:max-w-fit p-2 ">
+      <div class="flex 1"></div>
+      <h1
+        class="text-center font-mplus text-xl md:text-xl lg:text-2xl p-2 font-semibold sm:mt-10 sm:pt-[64px]"
+      >
+        All Projects
+      </h1>
+      <div class="grid mb-5">
+        {projects.map((project) => <PortfolioPreview project={project} />)}
+      </div>
+    </section>
   </Main>
   <style>
     .grid {

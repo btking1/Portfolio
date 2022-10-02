@@ -1,14 +1,27 @@
 ---
-// Data Fetching: List all Markdown posts in the repo.
-const projects = await Astro.glob("../pages/project/**/*.md");
-const featuredProject = projects[0];
+interface Frontmatter {
+  title: string;
+  description?: string;
+  image?: string;
+  date?: string;
+  tags?: string[];
+  content: any;
+}
+
+const projects = await Astro.glob<Frontmatter>("../pages/project/**/*.md");
+const featuredProject = projects.find(
+  (project) => project.frontmatter.title === "Image AI"
+);
 import PortfolioPreview from "../components/PortfolioPreview.astro";
 ---
 
-
 <div class="py-10">
   <div class="section">
-    <h3 class="text-center font-mplus text-xl md:text-xl lg:text-2xl p-4 font-semibold">Featured Project</h3>
+    <h3
+      class="text-center font-mplus text-xl md:text-xl lg:text-2xl p-4 font-semibold"
+    >
+      Featured Project
+    </h3>
     <PortfolioPreview project={featuredProject} />
     <div class="flex justify-end p-4">
       <a href="/projects/" class="font-kosugi">View All</a>

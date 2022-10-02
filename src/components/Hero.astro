@@ -5,19 +5,19 @@ import { Icon } from "astro-icon";
 
 <header class="pt-20">
   <div id="hero" class="flex flex-col justify-center items-center p-10 my-6">
-    <h1 class="font-kosugi ml-5 sm:text-3xl md:text-5xl py-2 font-medium">
+    <h1 id='name' class="font-kosugi ml-5 sm:text-3xl md:text-5xl py-2 font-medium">
       Hello, I'm Booker King
     </h1>
-    <h3 class="font-kosugi sm:text-xl md:text-5xl lg:text-5xl py-2 text-center">
+    <h3 id="subtitle" class="font-kosugi text-2xl md:text-5xl lg:text-5xl py-2 text-center">
       Creative-Thinker + Full-Stack Developer
     </h3>
     <p class="font-kosugi text-sm lg:text-lg py-5 text-center leading-8">
       programmer with a passion for learning new things and developing software.
     </p>
-    <div class="font-kosugi text-sm lg:text-lg text-end p-3 mt-1">
+    <div id='emojis' class="font-kosugi text-sm lg:text-lg text-center p-3 mt-1">
       <span class="role">👩‍💻 Developer</span>
       <span class="role">🎤 Creator</span>
-      <span class="role text-center justify-center">✏️ Problem-Solver</span>
+      <span class="role">✏️ Problem-Solver</span>
     </div>
     <div class="flex gap-4 items-center h-full text-3xl p-5 justify-center">
       <a href="https://github.com/btking1">
@@ -63,6 +63,7 @@ import { Icon } from "astro-icon";
     </div>
   </section>
   <style>
+  
     [astro-icon] {
       /* color: inherit; */
       width: 2rem;
@@ -197,6 +198,24 @@ max-height: fit-content; */
         height: 100%;
         width: 70vw;
       }
+      @media (max-width: 400px){
+        #name{
+          line-height: 3rem;
+          font-size: 1.6rem;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        #subtitle{
+          font-size: 1.2rem;
+
+        }
+        #emojis {
+          font-size: x-small;
+          width: max-content;
+        }
+      } 
     }
   </style>
 

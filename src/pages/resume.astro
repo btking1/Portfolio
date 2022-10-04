@@ -28,23 +28,28 @@ import Resbox from "../components/Resbox.jsx";
       } */
     </style>
     <div class="flex-1 w-full pt-[64px]"></div>
-    <main class="flex justify-center items-center h-screen">
-      <section
-        class="
-       w-full flex h-full justify-center items-center"
-      >
+    <main
+      class="flex justify-center items-center h-screen w-full mx-auto my-[8vh] lg:my-0"
+    >
+      <section class="w-full flex h-full justify-center items-center">
         <Resbox client:load>
           <!-- <div
             id="resume-container"
             class="flex w-full max-h-[75%] h-screen justify-center gap-3 flex-wrap"
           > -->
           <div
-            class="border-4 rounded-sm border-solid basis-1/3 p-4 w-full lg:w-[40%]"
+            class="border-4 rounded-sm border-solid px-5 p-4 mx-auto w-5/6 lg:basis-2/4 h-[80%]"
           >
-            <div class="flex">
-              <h4 class="text-2xl font-medium font-kosugi">Frontend</h4>
+            <div class="flex justify-between pt-5 content-center">
+              <h4 class="text-4xl font-medium font-kosugi">Frontend</h4>
+              <Icon
+                name="ion:desktop-outline"
+                stroke-width={"20px"}
+                height={"50px"}
+                width={"50px"}
+              />
             </div>
-            <ul class="font-mplus">
+            <ul class="mt-5 leading-10 text-xl font-mplus p-2">
               <li>React</li>
               <li>JavaScript ES6+</li>
               <li>jQuery</li>
@@ -56,19 +61,20 @@ import Resbox from "../components/Resbox.jsx";
             </ul>
           </div>
           <div
-            class="border-4 rounded-sm border-solid basis-1/3 p-4 w-full lg:w-[40%]"
+            class="border-4 rounded-sm border-solid p-4 mx-auto w-5/6 lg:basis-2/4 h-[80%]"
           >
-            <div class="flex">
-              <h4 class="text-2xl font-kosugi font-medium">Backend</h4>
+            <div class="flex justify-between pt-5 content-center">
+              <h4 class="text-4xl font-medium font-kosugi items-end">
+                Backend
+              </h4>
               <Icon
-                pack="pixelarticons"
-                name="server"
+                name="ion:server"
                 stroke-width={"20px"}
                 height={"50px"}
                 width={"50px"}
               />
             </div>
-            <ul class="list-none font-mplus">
+            <ul class="text-xl leading-10 list-none font-mplus mt-5 p-2">
               <li>Express</li>
               <li>Node</li>
               <li>MongoDB</li>

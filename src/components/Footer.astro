@@ -1,22 +1,28 @@
 ---
-const currentYear = new Date().getFullYear();
+import { Icon } from "astro-icon";
 ---
 
-<footer class="p-4 text-center">
+<footer class="p-4 text-center flex items-center justify-center">
   <button
     type="submit"
-    class="send-email text-zinc-500 hover:text-blue-400 cursor-pointer"
+    class="contact text-zinc-500 hover:text-blue-400 cursor-pointer flex items-end justify-baseline gap-1"
   >
-    send me a
-    <span class="font-mplus text-lg">📧</span>
+    <p>Get in Touch</p>
+    <Icon
+      name="ion:ios-email"
+      stroke-width={"15px"}
+      height={"20px"}
+      width={"20px"}
+    />
+    <!-- <span class="font-mplus text-lg">📧</span> -->
   </button>
 </footer>
 <script>
-  const sendEmail = document.querySelector(".send-email");
+  const contactpage = document.querySelector(".contact");
 
-  sendEmail.addEventListener("click", (event) => {
+  contactpage.addEventListener("click", (event) => {
     event.preventDefault();
-    const email = "mailto:	btking1@my.waketech.edu";
-    window.location.href = email;
+
+    window.location.href = "/contact";
   });
 </script>

@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 
-export default function Resbox({ children }) {
+export default function Formbox({ children }) {
   return (
     <motion.div
-      class="flex w-full lg:w-[70%]  h-fit lg:h-screen items-center  gap-2 lg:gap-3 flex-col lg:flex-row px-5"
+      class=""
       initial={{
         x: -500,
         opacity: 0,

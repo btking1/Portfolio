@@ -1,7 +1,8 @@
 ---
-import MemoryChip from "./icons/memoryChip.jsx";
+// import MemoryChip from "./icons/memoryChip.jsx";
 import ThemeToggle from "./themeToggleButton.jsx";
 import DropdownMenu from "./DropdownMenu.jsx";
+import { Icon } from "astro-icon";
 
 const homeUrl: URL = new URL("/", Astro.url);
 const aboutUrl: URL = new URL("/about", Astro.url);
@@ -27,9 +28,15 @@ const pages: Page = [
     <nav class="flex items-center gap-3 text-base">
       <a class="link" href="/">
         <h2
-          class="flex font-bold -tracking-tighter p-2 font-jetbrains text-lg items-center content-center gap-1"
+          class="flex font-bold -tracking-tighter p-2 font-jetbrains text-lg items-center content-center gap-2"
         >
-          <MemoryChip />
+          <Icon
+            class=""
+            name="ion:code-slash-outline"
+            stroke-width={"20px"}
+            height={"25px"}
+            width={"25px"}
+          />
           BK:DEV
         </h2>
       </a>

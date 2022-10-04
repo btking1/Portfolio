@@ -7,11 +7,9 @@ import Nav from "../components/Nav.astro";
 import Formbox from "../components/Formbox.jsx";
 import { prisma } from "src/db/client";
 
-const response = await prisma.user
-  .findMany()
-  .then((res) => JSON.stringify(res));
+const response = await prisma.user.findMany().then((res) => res);
 
-const users  = response[0].normalize();
+const users = response[0].createdAt
 
 console.log(users);
 ---
@@ -27,7 +25,9 @@ console.log(users);
     <Nav />
 
     <div class="flex-1 w-full pt-[64px]"></div>
-
+    <code>
+      {users}
+    </code>
     <main class="flex h-screen w-full items-center justify-center">
       <Formbox client:load>
         <form

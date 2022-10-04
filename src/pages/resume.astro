@@ -3,18 +3,85 @@ import MainHead from "../components/MainHead.astro";
 import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+import { Icon } from "astro-icon";
+import Resbox from "../components/Resbox.jsx";
 ---
 
 <html lang="en">
   <head>
     <MainHead
       title="Resume | Booker King"
-      description="Resume page"
+      description="Booker King resume page"
     />
   </head>
   <Body>
     <Nav />
-    <h1>Resume</h1>
+    <style>
+      /* @media (max-width: 764px) {
+        #resume-container {
+          flex-direction: column;
+          max-width: 75%;
+        }
+      } */
+      /* [astro-icon="server"] {
+        color: blue;
+      } */
+    </style>
+    <div class="flex-1 w-full pt-[64px]"></div>
+    <main class="flex justify-center items-center h-screen">
+      <section
+        class="
+       w-full flex h-full justify-center items-center"
+      >
+        <Resbox client:load>
+          <!-- <div
+            id="resume-container"
+            class="flex w-full max-h-[75%] h-screen justify-center gap-3 flex-wrap"
+          > -->
+          <div
+            class="border-4 rounded-sm border-solid basis-1/3 p-4 w-full lg:w-[40%]"
+          >
+            <div class="flex">
+              <h4 class="text-2xl font-medium font-kosugi">Frontend</h4>
+            </div>
+            <ul class="font-mplus">
+              <li>React</li>
+              <li>JavaScript ES6+</li>
+              <li>jQuery</li>
+              <li>Bootstrap</li>
+              <li>HTML</li>
+              <li>CSS</li>
+
+              <li>Material Ui</li>
+            </ul>
+          </div>
+          <div
+            class="border-4 rounded-sm border-solid basis-1/3 p-4 w-full lg:w-[40%]"
+          >
+            <div class="flex">
+              <h4 class="text-2xl font-kosugi font-medium">Backend</h4>
+              <Icon
+                pack="pixelarticons"
+                name="server"
+                stroke-width={"20px"}
+                height={"50px"}
+                width={"50px"}
+              />
+            </div>
+            <ul class="list-none font-mplus">
+              <li>Express</li>
+              <li>Node</li>
+              <li>MongoDB</li>
+              <li>MySQL</li>
+              <li>SQL</li>
+              <li>NoSQL</li>
+              <li>GraphQL</li>
+            </ul>
+          </div>
+          <!-- </div> -->
+        </Resbox>
+      </section>
+    </main>
     <Footer />
   </Body>
 </html>

@@ -3,115 +3,74 @@ import MainHead from "../components/MainHead.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 import Body from "../components/Body.astro";
-
+// border-cyan-500 border border-solid
 const { content } = Astro.props;
 ---
 
 <html lang={content.lang || "en"}>
   <head>
     <MainHead title={content.title} description={content.description} />
-    <style>
-      .hero {
-        /* padding: 8rem; */
-        display: flex;
-        background-color: var(--t-fg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        min-height: 25vw;
-        font-family: "architects daughter", sans-serif;
-        color: (black, 0.8);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .tag {
-        margin-left: 0.5em;
-        margin-right: 0.5em;
-        text-transform: uppercase;
-        font-family: "kosugi maru", sans-serif;
-      }
-
-      .tag:nth-of-type(1n) {
-        color: var(--c-green);
-      }
-      .tag:nth-of-type(2n) {
-        color: var(--c-orange);
-      }
-      .tag:nth-of-type(3n) {
-        color: var(--c-blue);
-      }
-      .tag:nth-of-type(4n) {
-        color: var(--c-pink);
-      }
-
-      .title {
-        font-size: var(--f-u10);
-        font-weight: 900;
-        text-transform: uppercase;
-        letter-spacing: 0.0625em;
-      }
-
-      .leadIn {
-        padding-top: 4em;
-        color: var(--t-bg);
-        background-color: var(--t-fg);
-        text-align: center;
-      }
-
-      .tagline {
-        font-weight: 300;
-        font-size: var(--f-u3);
-        line-height: 1.5;
-        font-family: "M PLUS Rounded 1c", sans-serif;
-      }
-
-      .content {
-        font-size: var(--f-u1);
-        line-height: 2.2;
-        max-width: 50em;
-        margin: auto;
-      }
-
-      .wrapper {
-        padding-bottom: 4em;
-        margin-bottom: 4em;
-      }
-
-      footer {
-        text-align: center;
-        margin-top: 3rem;
-      }
-    </style>
   </head>
   <Body>
     <Nav />
     <div class="flex-1 w-full pt-[64px]"></div>
+    <!-- <div id='hero-container'class="flex justify-center w-full  mx-auto  items-center"> -->
+    <style>
+      /* #leadIn {
+       
+      } */
+      /* @media (max-width:800px){
 
-    <header style={`background-image:url(${content.img})`} class="hero pt-[56px]">
-      <h1 class="title">{content.title}</h1>
+          #hero-container{
+            height: fit-content;
+          }
+          #hero{
+            height: 30vh;
+          }
+        } */
+    </style>
+
+    <header
+      id="hero"
+      style={`background-image:url(${content.img})`}
+      class="bg-no-repeat bg-local mx-auto w-full bg-cover bg-center flex-col flex items-center justify-center min-h-[50vh]"
+    >
+      <h1
+        class="mx-auto p-3 font-kosugi text-xl font-extrabold uppercase tracking-tighter opacity-80 dark:opacity-60  dark:text-blue-600"
+      >
+        {content.title}
+      </h1>
     </header>
-    <div class="leadIn">
-      <div class="wrapper">
-        {content.tags.map((t) => <span class="tag">{t}</span>)}
-        <h3 class="tagline">{content.description}</h3>
+    <!-- </div> -->
+    <div id="leadIn" class=" text-center">
+      <div class="p-[4em]">
+        {content.tags.map((t) => <span class="ml-[0.5] mr-[0.5em] uppercase text-kosugi  ">{t}</span>)}
+        <h3 class="font-light text-xl leading-6 font-mplus">
+          {content.description}
+        </h3>
       </div>
     </div>
-    <div class="wrapper">
-      <div class="content"><slot /></div>
-      <div class="flex justify-center items center gap-5">
+    <div class="p-[1em] mb-[4em]">
+      <div class="font-light leading-6 font-mplus m-auto"><slot /></div>
+      <div class="flex justify-center items center gap-5 mt-3">
         <a href={content.appLink}>
-          <button id="link" type="submit" class="hover:text-orange-300"
-            >App Link</button
+          <button
+            id="link"
+            type="submit"
+            class="  p-2 hover:text-blue-400 cursor-pointer">Link to App</button
           >
         </a>
         <a href={content.github}>
-          <button id="github" class="hover:text-orange-300">GitHub</button>
+          <button id="github" class="p-2  hover:text-blue-400 cursor-pointer"
+            >GitHub</button
+          >
         </a>
       </div>
     </div>
-    <footer>
-      <a href="/projects" class="button">View More</a>
+    <footer class='text-center'>
+      <a href="/projects" class="button hover:text-blue-400 cursor-pointer"
+        >View More</a
+      >
     </footer>
     <Footer />
   </Body>

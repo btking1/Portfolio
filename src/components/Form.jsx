@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
-export default function Formbox({ children }) {
+export default function Form({ children }) {
+
+
   return (
     <motion.div
       class=""

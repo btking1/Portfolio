@@ -1,6 +1,6 @@
 ---
 import PortfolioPreview from "../components/PortfolioPreview.astro";
-import MainHead from "@components/MainHead.astro";
+import MainHead from "../components/MainHead.astro";
 import Main from "../layouts/main.astro";
 const projects = (await Astro.glob("./project/**/*.md"))
   .filter(({ frontmatter }) => !!frontmatter.publishDate)

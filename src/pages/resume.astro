@@ -3,6 +3,7 @@ import MainHead from "../components/MainHead.astro";
 import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
+
 import { Icon } from "astro-icon";
 import Resbox from "../components/Resbox.jsx";
 ---
@@ -16,32 +17,18 @@ import Resbox from "../components/Resbox.jsx";
   </head>
   <Body>
     <Nav />
-    <style>
-      /* @media (max-width: 764px) {
-        #resume-container {
-          flex-direction: column;
-          max-width: 75%;
-        }
-      } */
-      /* [astro-icon="server"] {
-        color: blue;
-      } */
-    </style>
+    <style></style>
     <div class="flex-1 w-full pt-[64px]"></div>
     <main
-      class="flex justify-center items-center h-screen w-full mx-auto my-[8vh] lg:my-0"
+      class="flex justify-center items-center h-full w-full mx-auto my-[5vh] lg:my-0"
     >
       <section class="w-full flex h-full justify-center items-center">
         <Resbox client:load>
-          <!-- <div
-            id="resume-container"
-            class="flex w-full max-h-[75%] h-screen justify-center gap-3 flex-wrap"
-          > -->
           <div
             class="border-4 rounded-sm border-solid px-5 p-4 mx-auto w-5/6 lg:basis-2/4 h-[80%]"
           >
             <div class="flex justify-between pt-5 content-center">
-              <h4 class="text-4xl font-medium font-kosugi">Frontend</h4>
+              <h4 class="text-5xl font-medium font-kosugi">Frontend</h4>
               <Icon
                 name="ion:desktop-outline"
                 stroke-width={"20px"}
@@ -49,7 +36,7 @@ import Resbox from "../components/Resbox.jsx";
                 width={"50px"}
               />
             </div>
-            <ul class="mt-5 leading-10 text-xl font-mplus p-2">
+            <ul class="mt-5 leading-10 text-2xl font-mplus p-2">
               <li>React</li>
               <li>JavaScript ES6+</li>
               <li>jQuery</li>
@@ -64,17 +51,17 @@ import Resbox from "../components/Resbox.jsx";
             class="border-4 rounded-sm border-solid p-4 mx-auto w-5/6 lg:basis-2/4 h-[80%]"
           >
             <div class="flex justify-between pt-5 content-center">
-              <h4 class="text-4xl font-medium font-kosugi items-end">
+              <h4 class="text-5xl font-medium font-kosugi items-end">
                 Backend
               </h4>
               <Icon
                 name="ion:server"
-                stroke-width={"20px"}
+                strokeWidth={"20px"}
                 height={"50px"}
                 width={"50px"}
               />
             </div>
-            <ul class="text-xl leading-10 list-none font-mplus mt-5 p-2">
+            <ul class="text-2xl leading-10 list-none font-mplus mt-5 p-2">
               <li>Express</li>
               <li>Node</li>
               <li>MongoDB</li>
@@ -83,8 +70,31 @@ import Resbox from "../components/Resbox.jsx";
               <li>NoSQL</li>
               <li>GraphQL</li>
             </ul>
+            <div class="flex gap-3 justify-end items-end h-40">
+              <button
+                id="resume_button"
+                class="flex items-end hover:text-blue-400"
+                type="button"
+              >
+                <h3 class="text-xl font-kosugi font-medium tracking-wide">
+                  View Resume
+                </h3>
+                <Icon
+                  name="ion:download-outline"
+                  strokeWidth={"20px"}
+                  height={"50px"}
+                  width={"50px"}
+                />
+              </button>
+            </div>
+            <script>
+              import Resume from "../../public/assets/Resume.pdf";
+              const resume_button = document.getElementById("resume_button");
+              resume_button.addEventListener("click", () => {
+                window.open(Resume, "_blank", "fullscreen=true");
+              });
+            </script>
           </div>
-          <!-- </div> -->
         </Resbox>
       </section>
     </main>

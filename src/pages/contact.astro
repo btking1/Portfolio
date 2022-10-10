@@ -4,14 +4,7 @@ import Body from "../components/Body.astro";
 import Footer from "../components/Footer.astro";
 import Nav from "../components/Nav.astro";
 // import { Icon } from "astro-icon";
-import Formbox from "../components/Formbox.jsx";
-import { prisma } from "src/db/client";
-
-const response = await prisma.user.findMany().then((res) => res);
-
-const users = response[0].createdAt
-
-console.log(users);
+import Form from "../components/Form.jsx";
 ---
 
 <html lang="en">
@@ -25,36 +18,78 @@ console.log(users);
     <Nav />
 
     <div class="flex-1 w-full pt-[64px]"></div>
-    <code>
-      {users}
-    </code>
+
     <main class="flex h-screen w-full items-center justify-center">
-      <Formbox client:load>
+      <Form client:load>
         <form
-          class="flex flex-col min-w-[50vw] h-1/2 gap-3 font-mono"
-          action=""
+          action="https://send.pageclip.co/ba294F9sjQ7FkNDk7hdZIyDRjjNcVokD/Portfolio-contact"
+          class="flex flex-col min-w-[50vw] h-1/2 gap-4 font-mono"
+          method="post"
         >
           <input
-            class="border-2 dark:border-none border-current rounded-md p-2"
-            type="text"
-            placeholder="name"
-          />
-          <input
-            class="border-2 dark:border-none border-current rounded-md p-2"
-            type="text"
+            class="border-2 dark:border-none border-current rounded-md p-3"
+            type="email"
             placeholder="email"
+            name="email"
           />
           <textarea
             class="border-2 dark:border-none border-current rounded-md p-2"
-            placeholder="message"></textarea>
-
-          <button
-            class="bg-blue-400 px-3 py-2 dark:bg-slate-900 text-zinc-900 dark:text-zinc-300 w-1/3 mt-5 border-white border rounded-md font-mono text-lg"
-            >submit</button
-          >
+            placeholder="message"
+            name="message"></textarea>
+          <div class="flex w-full justify-end ">
+            <button
+              class="bg-blue-400 px-3 py-2 dark:bg-slate-900 text-zinc-900 dark:text-zinc-300 w-full lg:w-1/3 border-white border rounded-md font-mono text-lg"
+              type="submit"
+            >
+              submit
+            </button>
+          </div>
         </form>
-      </Formbox>
+        <!-- <script>
+          // import type { request } from "http";
+
+          // const form = document.querySelector("form");
+          // form.addEventListener("submit", (e) => {
+          //   e.preventDefault();
+          //   const name = form.formName.value;
+            // const email = form.email.value;
+            // const message = form.message.value;
+            // const data = {
+            //   name: name,
+            //   email: email,
+            //   message: message,
+            // };
+          //   console.log(JSON.stringify(name));
+          //   fetch(`/sendform`, {
+          //     method: "POST",
+          //     body: name,
+          //     mode: "no-cors",
+          //     headers: {
+          //       "Content-Type": "application/json",
+          //     },
+          //   })
+          //     .then((res) => {
+          //       console.log(res.json());
+          //       if (res.status === 200) {
+          //         alert("Message sent!");
+          //       } else {
+          //         alert("Message failed to send.");
+          //       }
+          //     })
+          //     .catch((err) => {
+          //       console.log(err);
+          //     });
+          // });
+        </script> -->
+      </Form>
     </main>
     <Footer />
   </Body>
+  <script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://s.pageclip.co/v1/pageclip.css"
+    media="screen"
+  />
 </html>
